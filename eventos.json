@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nombre": "joker",
+    "localidad": "Cine Verdi",
+    "semana": "domingo",
+    "dia": 29,
+    "mes": "FEB",
+    "year": 2023,
+    "imagen": ["joker.jpg"]
+  }
+]

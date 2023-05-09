@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+      integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Barra de navegacion y slider-->
+      <div class="container-slider">
+        <div class="container-fluid info-nav">
+          <nav class="navbar navbar-expand-xl">
+            <div class="container-fluid contenedor-nav">
+              <a class="nav-link" href="index.html">
+                <img class="logo" src="img/_logo_muni_iso.png" alt="logo" />
+              </a>
+
+              <button
+                type="button"
+                class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu-navegacion"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div id="menu-navegacion" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-7">
+                  <li class="nav-item">
+                    <a class="nav-link menu-items" href="#">Iniciar Sesion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-items" href="#"> Carrito </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-items" href="html/registrate.html">
+                      Registrate</a
+                    >
+                  </li>
+                </ul>
+                <div class="wrap">
+                  <div class="widget">
+                    <div class="reloj">
+                      <p id="horas" class="horas"></p>
+                      <p>:</p>
+                      <p id="minutos" class="minutos"></p>
+                      <p>:</p>
+                      <div class="caja-segundos">
+                        <p id="segundos" class="segundos"></p>
+                        <p id="ampm" class="ampm"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="slider" id="slider">
+          <div class="slider--section">
+            <img src="img/avatar.jpg" alt="imagen-1" class="slider--img" />
+          </div>
+          <div class="slider--section">
+            <img src="img/harrypotter.jpg" alt="imagen-2" class="slider--img" />
+          </div>
+          <div class="slider--section">
+            <img src="img/batman.jpg" alt="imagen-3" class="slider--img" />
+          </div>
+          <div class="slider--section">
+            <img src="img/pelicula1.jpg" alt="imagen-4" class="slider--img" />
+          </div>
+        </div>
+        <div class="slider--btn slider__btn--right" id="btn-right">&#62;</div>
+        <div class="slider--btn slider__btn--left" id="btn-left">&#60;</div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container-fluid" id="buscador">
+        <div
+          class="row justify-content-center align-center"
+          style="padding: 1% 7%"
+        >
+          <form id="buscador2" action="eventos" method="get" style="z-index: 1">
+            <!-- argumento de busqueda -->
+            <input
+              type="text"
+              size="40%"
+              name="q"
+              id="q"
+              value=""
+              placeholder="Buscar un evento..."
+            />
+            <select
+              name="tematica"
+              id="tematica"
+              onChange="cargarComuna(this.value);"
+            >
+              <option value="">Tematica</option>
+              <option value="1">Cine</option>
+              <option value="2">Teatro</option>
+              <option value="3">Musica</option>
+              <option value="4">Eventos</option>
+            </select>
+            <!-- :Localidad -->
+            <select
+              name="region"
+              id="region"
+              onChange="cargarComuna(this.value);"
+            >
+              <option value="">Localidad</option>
+              <option value="1">Playon Municipal</option>
+              <option value="2">Mini Ciudad Vial</option>
+              <option value="3">CUF</option>
+              <option value="4">Parque Tiscornia</option>
+              <option value="5">Museo Municiapal de Firmat</option>
+              <option value="6">Hall Central Municiapl</option>
+            </select>
+
+            <!-- Mes con año-->
+            <select name="mes" id="mes" style="width: 50%">
+              <option value="">Por Mes.</option>
+              <option value="2023-02-01 00:00:00">Feb de 2023</option>
+              <option value="2023-03-01 00:00:00">Mar de 2023</option>
+              <option value="2023-04-01 00:00:00">Abr de 2023</option>
+              <option value="2023-05-01 00:00:00">May de 2023</option>
+              <option value="2023-06-01 00:00:00">Jun de 2023</option>
+              <option value="2023-07-01 00:00:00">Jul de 2023</option>
+              <option value="2023-08-01 00:00:00">Ago de 2023</option>
+              <option value="2023-09-01 00:00:00">Sep de 2023</option>
+              <option value="2023-10-01 00:00:00">Oct de 2023</option>
+              <option value="2023-11-01 00:00:00">Nov de 2023</option>
+              <option value="2023-12-01 00:00:00">Dic de 2023</option>
+              <option value="2024-01-01 00:00:00">Ene de 2024</option>
+            </select>
+            <!-- Mes con año-->
+            <input type="hidden" name="page" value="1" />
+            <button class="yellow" type="submit">BUSCAR</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="slider-cards">
+      <div class="btn-semana-mes">
+        <button type="button" class="btn-lg btn-semana" class="m-2">
+          Esta SEMANA
+        </button>
+        <button type="button" class="btn-lg btn-mes">Este MES</button>
+      </div>
+      <div class="container-fluid">
+        <div class="row justify-content-center align-center">
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#astros"
+              >
+                <img class="img-fluid" src="img/astros.jpg" alt="astros" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Astros desde Firmat</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Dom</p>
+                  <h5>29</h5>
+                  <p>Feb 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Mini ciudad Vial</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#astros"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#firmatMovimiento"
+              >
+                <img
+                  class="img-fluid"
+                  src="img/firmatMovimiento.jpg"
+                  alt="firmatMovimiento"
+                />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Firmat en Movimiento</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Mie</p>
+                  <h5>1</h5>
+                  <p>Mar 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Playon Municipal</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#firmatMovimiento"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#misRaices"
+              >
+                <img
+                  class="img-fluid"
+                  src="img/misraices.jpg"
+                  alt="misRaices"
+                />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>A Mis Raices</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Jue</p>
+                  <h5>15</h5>
+                  <p>dic 2022</p>
+                </div>
+                <div class="localidad">
+                  <p>Hall Central Municipal</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#misRaices"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#basquet"
+              >
+                <img class="img-fluid" src="img/3x3.jpg" alt="basquet" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Torneo 3 x 3</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Dom</p>
+                  <h5>29</h5>
+                  <p>Ene 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Playon del Ferrocarril</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#basquet"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#museo"
+              >
+                <img class="img-fluid" src="img/museo.jpg" alt="museo" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>La Noche de los Museos</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie</p>
+                  <h5>27</h5>
+                  <p>Ene 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Museo Municipal de Firmat</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#museo"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#autos"
+              >
+                <img class="img-fluid" src="img/autos.jpg" alt="autos" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Crazy Friends</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie</p>
+                  <h5>25</h5>
+                  <p>Feb 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Parque Tiscornia</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#autos"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#coro"
+              >
+                <img class="img-fluid" src="img/coro.jpg" alt="coro" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Coro Municipal</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Ciclo</p>
+                  <h5>2023</h5>
+                </div>
+                <div class="localidad">
+                  <p>Elenco Municipal</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#coro"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#rally"
+              >
+                <img class="img-fluid" src="img/rally.jpg" alt="rally" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Rally</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie-Sab-Dom</p>
+                  <h5>3-4-5</h5>
+                  <p>Mar 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Firmat</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#rally"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Fotos -->
+    <section>
+      <!-- Astros -->
+      <div
+        tabindex="-1"
+        aria-labelledby="astros"
+        aria-hidden="true"
+        class="modal fade"
+        id="astros"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/astros.jpg"
+                  alt="astros"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  excepturi dolorem, itaque error quaerat necessitatibus culpa
+                  deserunt. Praesentium odit quae officia saepe ea sit
+                  temporibus? Et eveniet vel laborum facilis.
+                </p>
+                <button type="button" class="btn btn-primary mb-2">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Firmat en Moviento-->
+      <div
+        tabindex="-1"
+        aria-labelledby="firmatMovimiento"
+        aria-hidden="true"
+        class="modal fade"
+        id="firmatMovimiento"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/firmatMovimiento.jpg"
+                  alt="firmatMovimiento"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptate fuga debitis rerum asperiores maxime. Repudiandae in
+                  inventore reiciendis ex optio deserunt similique corporis!
+                  Debitis voluptatem eos eum ut at aspernatur!
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- misRaices -->
+      <div
+        tabindex="-1"
+        aria-labelledby="misRaices"
+        aria-hidden="true"
+        class="modal fade"
+        id="misRaices"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/misraices.jpg"
+                  alt="misRaices"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Impedit saepe eius laborum. Ducimus quidem voluptate
+                  doloremque libero voluptates ullam. Doloribus dolores et est
+                  quo harum deleniti atque, modi repellendus magni.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fox -->
+      <div
+        tabindex="-1"
+        aria-labelledby="basquet"
+        aria-hidden="true"
+        class="modal fade"
+        id="basquet"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/3x3.jpg"
+                  alt="basquet"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                  rerum, vel molestias necessitatibus error magni ipsa sed
+                  facere aut velit placeat, quae nisi hic ipsam possimus maxime
+                  tempore quasi deserunt!
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- museo -->
+      <div
+        tabindex="-1"
+        aria-labelledby="museo"
+        aria-hidden="true"
+        class="modal fade"
+        id="museo"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/museo.jpg"
+                  alt="museo"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                  eius maiores mollitia. Ex, quas, aut perspiciatis sit beatae
+                  officia illum maxime eveniet rem eius voluptate distinctio non
+                  harum dolorem praesentium.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- autos -->
+      <div
+        tabindex="-1"
+        aria-labelledby="autos"
+        aria-hidden="true"
+        class="modal fade"
+        id="autos"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/autos.jpg"
+                  alt="autos"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dignissimos voluptates quidem laudantium dolorum et vero
+                  consequatur qui facilis tenetur voluptatum distinctio
+                  accusantium, eius facere, quibusdam quas voluptatem itaque
+                  similique cum.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- coro -->
+      <div
+        tabindex="-1"
+        aria-labelledby="coro"
+        aria-hidden="true"
+        class="modal fade"
+        id="coro"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/coro.jpg"
+                  alt="coro"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                  a voluptatibus unde quo perspiciatis porro atque veniam iste,
+                  laborum, veritatis est aliquid. Necessitatibus nobis molestias
+                  ut maiores quisquam nesciunt fugit.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- coro -->
+      <div
+        tabindex="-1"
+        aria-labelledby="rally"
+        aria-hidden="true"
+        class="modal fade"
+        id="rally"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="row justify-content-center my-3">
+              <div class="col col-xl-6 col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/rally.jpg"
+                  alt="rally"
+                />
+              </div>
+              <div class="col col-xl-6 col-sm-10 mb-3">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Error, voluptas quasi laborum molestiae debitis sit id qui ea?
+                  Iure optio officiis ipsam recusandae aut? Accusamus id ipsum
+                  cupiditate neque laborum.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="pulicidad">
+        <div class="propaganda">
+          <img src="img/911_0.gif" height="100" class="m-2" />
+          <img src="img/gif-web-cuf.gif" height="100" class="m-2" />
+          <img src="img/103_2.gif" height="100" width="200" class="m-2" />
+        </div>
+      </div>
+    </section>
+    <section class="slider-cards">
+      <div class="container-fluid">
+        <div class="row justify-content-center align-center">
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#starWars"
+              >
+                <img class="img-fluid" src="img/starWars.jpg" alt="starWars" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Star Wars</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Dom</p>
+                  <h5>29</h5>
+                  <p>Abr 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Cine Verdi</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#starWars"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#wakolda"
+              >
+                <img class="img-fluid" src="img/wakolda.jpg" alt="wakolda" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Wakolda</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Jue</p>
+                  <h5>18</h5>
+                  <p>Jun 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Cine Verdi</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#wakolda"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#hormiga"
+              >
+                <img
+                  class="img-fluid"
+                  src="img/quantimania.jpg"
+                  alt="hormiga"
+                />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Quantumania</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Jue</p>
+                  <h5>20</h5>
+                  <p>Abr 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Cine Verdi</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#hormiga"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#Peña"
+              >
+                <img class="img-fluid" src="img/penia.jpg" alt="Peña" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Peña de la Academia</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Sab</p>
+                  <h5>20</h5>
+                  <p>Jun 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Posta Juarez</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#Peña"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#museo"
+              >
+                <img class="img-fluid" src="img/museo.jpg" alt="museo" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>La Noche de los Museos</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie</p>
+                  <h5>27</h5>
+                  <p>Ene 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Museo Municipal de Firmat</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#museo"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#autos"
+              >
+                <img class="img-fluid" src="img/autos.jpg" alt="autos" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Crazy Friends</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie</p>
+                  <h5>25</h5>
+                  <p>Feb 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Parque Tiscornia</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#autos"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#coro"
+              >
+                <img class="img-fluid" src="img/coro.jpg" alt="coro" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Coro Municipal</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Ciclo</p>
+                  <h5>2023</h5>
+                </div>
+                <div class="localidad">
+                  <p>Elenco Municipal</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#coro"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-10 col-lg-5 col-xl-3 contenedor-card">
+            <div class="card">
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#rally"
+              >
+                <img class="img-fluid" src="img/rally.jpg" alt="rally" />
+              </a>
+            </div>
+            <div class="card-body card-text">
+              <h4>Rally</h4>
+              <div class="content-date">
+                <div class="day">
+                  <p>Vie-Sab-Dom</p>
+                  <h5>3-4-5</h5>
+                  <p>Mar 2023</p>
+                </div>
+                <div class="localidad">
+                  <p>Firmat</p>
+                  <a
+                    class="card-img"
+                    href="#!"
+                    data-bs-toggle="modal"
+                    data-bs-target="#rally"
+                  >
+                    <button type="button" class="btn btn-primary">
+                      Mas info
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Fotos -->
+    <section>
+      <!-- StarWars -->
+      <div
+        tabindex="-1"
+        aria-labelledby="starWars"
+        aria-hidden="true"
+        class="modal fade"
+        id="starWars"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="col justify-content-center">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0 bg-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal w-100"
+                  src="img/starWars.jpg"
+                  alt="starWars"
+                />
+              </div>
+              <div class="col">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  excepturi dolorem, itaque error quaerat necessitatibus culpa
+                  deserunt. Praesentium odit quae officia saepe ea sit
+                  temporibus? Et eveniet vel laborum facilis.
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Wakolda -->
+      <div
+        tabindex="-1"
+        aria-labelledby="wakolda"
+        aria-hidden="true"
+        class="modal fade"
+        id="wakolda"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col col-sm-10">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0 bg-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <iframe
+                  src="https://player.vimeo.com/video/71984695?h=0c797fd407"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+              <div class="col mb-3">
+                <h4>Sinopsis</h4>
+                <p>
+                  En el verano de 1960, en la desolada región de la Patagonia,
+                  un médico alemán (Alex Brendemühl) conoce a una familia
+                  argentina y se une a ellos para seguir la ruta del desierto en
+                  caravana. La familia hace renacer en él todas sus obsesiones
+                  por la pureza y la perfección. En especial Lilith, una niña
+                  casi adolescente con un cuerpo demasiado pequeño para su edad.
+                  La fascinación es mutua; en pleno despertar sexual, Lilith
+                  siente una inquietante atracción por el forastero. Sin conocer
+                  la verdadera identidad del alemán, al llegar a Bariloche, Enzo
+                  (Diego Peretti) y Eva (Natalia Oreiro) lo aceptan como primer
+                  huésped de su hostería, a orillas del lago Nahuel Huapi.
+                  Aunque el extraño personaje despierta en los anfitriones
+                  cierto recelo, poco a poco se verán seducidos por sus modales,
+                  su distinción, su saber científico y su dinero. (FILMAFFINITY)
+                </p>
+                <button type="button" class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Quantumania -->
+      <div
+        tabindex="-1"
+        aria-labelledby="hormiga"
+        aria-hidden="true"
+        class="modal fade"
+        id="hormiga"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0 bg-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <iframe
+                  src="https://www.youtube.com/embed/51S4llUG5QM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="col">
+                <h4>Sinopsis</h4>
+                <p>
+                  Scott Lang (Paul Rudd) está disfrutando de su vida como
+                  Vengador y de la fama que ha ganado por ayudar a salvar a la
+                  humanidad en Vengadores: Endgame. Todo el mundo le quiere y le
+                  adora. Incluso ha publicado un libro. No obstante,eso cambia
+                  cuando los secretos familiares empiezan a salir a la luz. Por
+                  culpa de una experimento, Scott Lang, su hija Cassie Lang
+                  (Kathryn Newton), su pareja Hope van Dyne (Evangeline Lilly),
+                  sus suegos Hank Pym (Michael Douglas) y Janet van Dyne
+                  (Michelle Pfeiffer) son arrastrados al Reino Cuántico. Allí,
+                  en esta dimensión del multiverso, se encontrarán con Kang el
+                  Conquistador (Jonathan Majors), el gran villano de la nueva
+                  era del Universo Cinematográfico de Marvel. Ant-Man y la
+                  Avispa: Quantumanía es la película encargada de dar el
+                  pistoletazo de salida a la Fase 5 de la franquicia.
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Peña -->
+      <div
+        tabindex="-1"
+        aria-labelledby="Peña"
+        aria-hidden="true"
+        class="modal fade"
+        id="Peña"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0 bg-white p-2"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/penia.jpg"
+                  alt="Peña"
+                />
+              </div>
+              <div class="col">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                  rerum, vel molestias necessitatibus error magni ipsa sed
+                  facere aut velit placeat, quae nisi hic ipsam possimus maxime
+                  tempore quasi deserunt!
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- museo -->
+      <div
+        tabindex="-1"
+        aria-labelledby="museo"
+        aria-hidden="true"
+        class="modal fade"
+        id="museo"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="col">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/museo.jpg"
+                  alt="museo"
+                />
+              </div>
+              <div class="col">
+                <h4>info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                  eius maiores mollitia. Ex, quas, aut perspiciatis sit beatae
+                  officia illum maxime eveniet rem eius voluptate distinctio non
+                  harum dolorem praesentium.
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- autos -->
+      <div
+        tabindex="-1"
+        aria-labelledby="autos"
+        aria-hidden="true"
+        class="modal fade"
+        id="autos"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/autos.jpg"
+                  alt="autos"
+                />
+              </div>
+              <div class="col">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dignissimos voluptates quidem laudantium dolorum et vero
+                  consequatur qui facilis tenetur voluptatum distinctio
+                  accusantium, eius facere, quibusdam quas voluptatem itaque
+                  similique cum.
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- coro -->
+      <div
+        tabindex="-1"
+        aria-labelledby="coro"
+        aria-hidden="true"
+        class="modal fade"
+        id="coro"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/coro.jpg"
+                  alt="coro"
+                />
+              </div>
+              <div class="col">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                  a voluptatibus unde quo perspiciatis porro atque veniam iste,
+                  laborum, veritatis est aliquid. Necessitatibus nobis molestias
+                  ut maiores quisquam nesciunt fugit.
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- coro -->
+      <div
+        tabindex="-1"
+        aria-labelledby="rally"
+        aria-hidden="true"
+        class="modal fade"
+        id="rally"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="col my-3">
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn-close position-absolute top-0 end-0"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+                <img
+                  class="foto-modal img-fluid"
+                  src="img/rally.jpg"
+                  alt="rally"
+                />
+              </div>
+              <div class="col">
+                <h4>Info</h4>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Error, voluptas quasi laborum molestiae debitis sit id qui ea?
+                  Iure optio officiis ipsam recusandae aut? Accusamus id ipsum
+                  cupiditate neque laborum.
+                </p>
+                <button type="button" class="btn btn-primary mb-3">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <h1>Contenedor Eventos</h1>
+      <div class="row" id="cards"></div>
+    </div>
+    <template id="template-eventos">
+      <div class="col-12 col-md-4 mb-3">
+        <div class="card">
+          <a
+            class="card-img"
+            href="#!"
+            data-bs-toggle="modal"
+            data-bs-target="#museo"
+          >
+            <img class="img-fluid" src="img/museo.jpg" alt="museo" />
+          </a>
+        </div>
+        <div class="card-body card-text ju">
+          <h4>La Noche de los Museos</h4>
+          <div class="content-date">
+            <div class="day">
+              <p>Vie</p>
+              <h5>27</h5>
+              <p id="mes">Ene <span> 2023</span></p>
+            </div>
+            <div class="localidad">
+              <h2>Museo Municipal de Firmat</h2>
+              <a
+                class="card-img"
+                href="#!"
+                data-bs-toggle="modal"
+                data-bs-target="#museo"
+              >
+                <button type="button" class="btn btn-primary">Mas info</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <footer
+      class="text-center text-lg-start footer-stick"
+      style="background-color: #db6930"
+    >
+      <div class="container d-flex justify-content-center py-5">
+        <a class="nav-link" href="index.html">
+          <img class="logo" src="img/_logo_muni_iso.png" alt="logo" />
+        </a>
+        <div class="row" id="redes-footer">
+          <h3>Redes Sociales:</h3>
+          <ul class="list-unstyled">
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-floating mx-2"
+                style="background-color: #54456b"
+              >
+                <a href="https://www.facebook.com/muni.firmat">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-floating mx-2"
+                style="background-color: #54456b"
+              >
+                <a href="https://www.instagram.com/munifirmat/">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-floating mx-2"
+                style="background-color: #54456b"
+              >
+                <a href="https://twitter.com/FirmatMunicipio">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="text-center text-white p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+      </div>
+    </footer>
+
+    <script src="js/js.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/reloj.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
