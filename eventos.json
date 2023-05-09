@@ -8,5 +8,24 @@
     "mes": "FEB",
     "year": 2023,
     "imagen": ["joker.jpg"]
+  },{
+    "id": 2,
+    "nombre": "Doctor Strange en el Multiverso de la Locura",
+    "localidad": "Cine Verdi",
+    "semana": "Sabado",
+    "dia": 28,
+    "mes": "FEB",
+    "year": 2023,
+    "imagen": ["img/drstrange.jpg"]
+  },
+  {
+    "id": 3,
+    "nombre": "Wakanda Forever",
+    "localidad": "Cine Verdi",
+    "semana": "Sabado",
+    "dia": 5,
+    "mes": "MAR",
+    "year": 2023,
+    "imagen": ["img/wakanda.jpg"]
   }
 ]
